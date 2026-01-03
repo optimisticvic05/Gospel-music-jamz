@@ -1,0 +1,173 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body{
+  background: #ffffff;
+  color: #0c0908;
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar{
+  width: 200px;
+  background: orangered;
+  padding: 2rem 1rem;
+  position: fixed;
+  height: 100%;
+}
+
+.sidebar h2{
+  color:#0c0908;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.sidebar ul{
+  list-style: none;
+}
+
+.sidebar ul li{
+  margin: 1rem 0;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+.sidebar ul li i{
+  margin-right: 10px;
+}
+
+.main-content{
+  margin-left: 200px;
+  padding: 2rem;
+  width: 100%;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+h1{
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+
+.playlist-grid{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 15px;
+  padding: 10px;
+}
+
+.playlist-card{
+  background: ghostwhite;
+  display: flex;
+  padding: 1rem;
+  border-radius: 12px;
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  flex-direction: column;
+}
+
+.album-cover{
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.playlist-title{
+  margin-top: 0.8rem;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.fake-play-button{
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background: orangered;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  padding: 10px;
+  font-size: 16px;
+  pointer-events: none;
+}
+
+.player-popup{
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+.player-popup:target{
+  display: flex;
+}
+
+.player-content{
+  background: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  text-align: center;
+  position: relative;
+}
+
+.player-content img{
+  width: 120px;
+  height: 120px;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+.play-btn{
+  background: orangered;
+  border: none;
+  color: #fff;
+  padding: 1rem;
+  border-radius: 50%;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.close-btn{
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  text-decoration: none;
+  color: #0c0908;
+}
+
+/* Responsive Sidebar */
+
+#media(max-width: 768px;){
+  .sidebar{
+    width: 70px;
+    padding: 1rem 0.5rem;
+  }
+  
+  .sidebar h2{
+    font-size: 1rem;
+  }
+  
+  .sidebar ul li{
+    font-size: 0;
+  }
+  
+  .sidebar ul li i{
+    font-size: 1.2rem;
+  }
+  
+  .main-content{
+    margin-left: 70px;
+  }
+}
